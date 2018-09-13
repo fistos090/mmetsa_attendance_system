@@ -1,0 +1,30 @@
+<md-content>
+    <h1>Select a range</h1>
+    <form name = "myForm">
+        <md-datepicker 
+            name = "start" 
+            ng-model = "startDate" 
+            md-placeholder = "Start date"
+            required 
+            md-date-filter = "notWeekends"></md-datepicker>
+        <div  class = "validation-messages" ng-messages = "myForm.start.$error">
+            <div ng-message = "valid">The entered value is not a date!</div>
+            <div ng-message = "required">This date is required!</div>
+            <div ng-message = "filtered">Only weekends are allowed!</div>
+        </div>
+        <md-datepicker 
+            name = "end" 
+            ng-model = "endDate" 
+            md-placeholder = "End date"
+            required 
+            md-date-filter = "notWeekends"></md-datepicker>
+
+        <div  class = "validation-messages" ng-messages = "myForm.end.$error">
+            <div ng-message = "valid">The entered value is not a date!</div>
+            <div ng-message = "required">This date is required!</div>
+            <div ng-message = "filtered">Only weekends are allowed!</div>
+        </div>
+
+        <md-button ng-disabled="myForm.$invalid" ng-click="showDates(startDate, endDate)" class="md-raised md-primary">Primary</md-button>
+    </form>
+</md-content>

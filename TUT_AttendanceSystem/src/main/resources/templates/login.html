@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" type="text/css" href="css/loginPG_style.css"/>
+    </head>
+    <body >
+        <div> </div>
+        
+        <div class="container body-bck" style="">
+            
+            <div class="login-form-area">
+                
+                <div class="login-header">
+                    <label>Login</label><p ><b id="sysTime"></b></p>
+                    <hr/>
+                </div>
+                <div class="login-body">
+                    <form >
+                    <label>Staff Number :</label>
+                    <input type="number" ng-model="user.userNumber" ng-style="studNumberStyle" required="" ng-change="changeStudNumberStyle()" class="form-control fInput" placeholder="Enter Staff Number"/>
+                    <label>Staff Password :</label>
+                    <input ng-model="user.password" type="password" class="form-control fInput" placeholder="Enter Staff Password"/>
+                    <br/>
+                    <span>Staff Type |</span>&nbsp;
+                    
+                    <input  type="radio" name="staffType" checked=""  ng-checked="adm" ng-click="userType(user,'ADMIN')" />&nbsp;Admin&nbsp;&nbsp;
+                    <input type="radio" name="staffType"  ng-checked="lec" ng-click="userType(user,'LECTURER')"  />&nbsp;Lecturer
+                    
+                    <span style="float: right;"><a ng-click="forgotPassword()" >forgot Password?</a></span>
+                    <br/><br/>
+                    <button ng-click="login(user)" class="login-btn">
+                        Login
+                    </button>
+                    <button style="float: right" ng-click="reset(user)" class="login-btn">
+                        Reset
+                    </button>
+                    </form>
+                </div>
+
+            </div>
+                
+        </div>
+<!--         <div id = "dialogContainer" class = "datepickerdemo" layout = "column" ng-cloak>
+            <md-content>
+
+                <h4>Standard Alert</h4>
+                <md-button class = "md-primary md-raised"
+                           ng-click = "showAlert($event)" flex = "100"  flex-gt-md = "auto">
+                    Alert
+                </md-button>
+
+                <h4>Confirm Dialog Box</h4>
+                <md-button class = "md-primary md-raised" ng-click = "showConfirm($event)"
+                           flex = "100"  flex-gt-md = "auto">
+                    Confirm
+                </md-button>
+
+                <h4>Custom Dialog Box</h4>
+                <md-button class = "md-primary md-raised" ng-click = "showCustom($event)"
+                           flex = "100"  flex-gt-md = "auto">
+                    Custom
+                </md-button>
+
+                <div ng-if = "status">
+                    <br/>
+                    <b layout = "row" layout-align = "center center" class = "md-padding">
+                        {{status}}
+                    </b>
+                </div>
+
+                ==================================Date Picker==============================================================
+
+                <h4>Standard Date Picker</h4>
+                <md-datepicker 
+                    ng-model = "myDate" 
+                    md-placeholder = "Start date"></md-datepicker>
+
+                <md-datepicker 
+                    ng-model = "myDate" 
+                    md-placeholder = "End date"></md-datepicker>
+
+                <h4>Disabled Date Picker</h4>
+                <md-datepicker 
+                    ng-model = "myDate" 
+                    md-placeholder = "Enter date" 
+                    disabled></md-datepicker>
+
+                <h4>Date-picker with min and max dates</h4>
+                <md-datepicker 
+                    ng-model = "myDate" 
+                    md-placeholder = "Enter date"
+                    md-min-date = "minDate" 
+                    md-max-date = "maxDate"></md-datepicker>
+
+                <h4>Date-picker with only selectable weekends</h4>
+                <md-datepicker 
+                    ng-model = "myDate" 
+                    md-placeholder = "Enter date"
+                    md-date-filter = "onlyWeekendsPredicate"></md-datepicker>
+
+                <h4>Date-picker with only selectable weekends in a range</h4>
+                <md-datepicker 
+                    ng-model = "myDate" 
+                    md-placeholder = "Enter date"
+                    md-min-date = "minDate" 
+                    md-max-date = "maxDate"
+
+                    md-date-filter = "onlyWeekendsPredicate"></md-datepicker>
+
+                <h4>Date-picker with validation mesages</h4>
+                <form name = "myForm">
+                    <md-datepicker 
+                        name = "start" 
+                        ng-model = "startDate" 
+                        md-placeholder = "Start date"
+                        required 
+                        md-date-filter = "notWeekends"></md-datepicker>
+                     <div  class = "validation-messages" ng-messages = "myForm.start.$error">
+                        <div ng-message = "valid">The entered value is not a date!</div>
+                        <div ng-message = "required">This date is required!</div>
+                        <div ng-message = "filtered">Only weekends are allowed!</div>
+                    </div>
+                    <md-datepicker 
+                        name = "end" 
+                        ng-model = "endDate" 
+                        md-placeholder = "End date"
+                        required 
+                        md-date-filter = "notWeekends"></md-datepicker>
+
+                    <div  class = "validation-messages" ng-messages = "myForm.end.$error">
+                        <div ng-message = "valid">The entered value is not a date!</div>
+                        <div ng-message = "required">This date is required!</div>
+                        <div ng-message = "filtered">Only weekends are allowed!</div>
+                    </div>
+
+                    <md-button ng-disabled="myForm.$invalid" ng-click="showDates(startDate, endDate)" class="md-raised md-primary">Primary</md-button>
+                </form>
+
+            </md-content>
+        </div>-->
+    </body>
+</html>
